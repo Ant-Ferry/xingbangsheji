@@ -1,0 +1,240 @@
+<extend name="Base/common"/>
+<!-- header start -->
+<block name="header">
+	   <script language="javascript">
+      var plarray = new Array();
+      plarray[0] = new Array('{:C('DOMAIN')}__IMG__/banner02.jpg', '');
+      
+
+    </script>
+    <div id="bbb" class="adx" style="opacity: 1;">
+      <!--style="background-color:#040922"-->
+      <div class="ad_neix">
+        <div id="srcid" onmouseover="document.getElementById('arrowleft').style.display='';document.getElementById('arrowright').style.display='';"
+        onmouseout="document.getElementById('arrowleft').style.display='none';document.getElementById('arrowright').style.display='none';"
+        style="position: relative; width: 100%; min-width: 1043px; height: 538px; background: url('{:C('DOMAIN')}__IMG__/banner02.jpg') 50% 0% no-repeat;">
+
+        </div>
+      </div>
+    </div>
+    <script language="javascript">
+      var lock = false;
+      var daqian = 0;
+      var nextx = 0;
+      var srcidx = document.getElementById('srcid');
+
+      var setAlphaOpacity = function(el, i) {
+        i = i / 100.0;
+        if (window.getComputedStyle) { // for non-IE
+          el.style.opacity = i;
+        } else if (document.documentElement.currentStyle) { // for IE
+          if (!el.currentStyle.hasLayout) {
+            el.style.zoom = 1;
+          }
+          if (!el.currentStyle.hasLayout) { //在IE8中zoom不生效，所以再次设置inline-block
+            el.style.display = 'inline-block';
+          }
+          try {
+            //测试是否已有filter
+            //http://msdn.microsoft.com/en-us/library/ms532847%28VS.85%29.aspx
+            if (el.filters) {
+              if (el.filters('alpha')) {
+                el.filters('alpha').opacity = i * 100;
+              } else {
+                el.style.filter += 'alpha(opacity=' + i * 100 + ')';
+              }
+            }
+          } catch(e) {
+            el.style.filter = 'alpha(opacity=' + i * 100 + ')';
+          }
+        }
+      }
+
+      function leftOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian - 1 + plarray.length) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+      }
+
+      function rightOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian + 1) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+
+      }
+
+      function callbackx() {
+        srcidx.style.backgroundImage = "url(" + plarray[nextx][0] + ")"; //document.getElementById('bbb').style.backgroundColor=plarray[nextx][1];
+        setAlphaOpacity(document.getElementById('bbb'), 100);
+        daqian = nextx;
+        lock = false;
+      }
+
+      setInterval(rightOne0e76228ea4384003b1e970bf2bd40536, 12000);
+    </script>
+</block>
+<!-- header  -->
+
+<block name="content">
+    <div class="main_all">
+      <div class="main">
+        <div class="main_1">
+          <span>
+            Careers｜加入{:C('WebName')}
+          </span>
+        </div>
+        <div class="main_14">
+          <div class="main_14_2">
+            您会在{:C('WebNameSpell')}{:C('WebName')}极具创新精神与创业氛围的品牌文化中得到良好的发展机会，从而选择一条适合您的事业发展之路。
+          </div>
+          <div class="main_14_3">
+            <!--编码-->
+            <span>
+              Project Leader | 品牌总监&amp;项目负责人
+            </span>
+            <p>
+              品牌咨询顾问与品牌设计专家都是经验丰富的项目负责人。他们具备多年的专业素养和实践能力。在客户面前作为项目负责人的您即是{:C('WebNameSpell')}{:C('WebName')}，代表{:C('WebNameSpell')}{:C('WebName')}公司和客户进行交流和沟通。
+            </p>
+            <span>
+              Design Leader | 品牌顾问&amp;设计负责人
+            </span>
+            <p>
+              作为一个高级品牌或设计顾问，您将是团队中的关键人物，向我们的客户提供行之有效的设计策略。通常您将负责一个或多个项目；直接与客户进行交流与沟通，确保各层面的交流畅通；指导带领您的项目组成员；参与项目提案准备；为客户做演讲。考虑到您的专业能力和愿望，有可能会分配给您完全不同领域的项目。我们将从行业中心或功能中心为您指派一位导师，他会在个人和专业方面指导您，帮您定位到一个专业领域。不断的反馈、评估与培训将使您的个人素养与职业水准得到提高。很快您将意识到，分配给您的任务与责任完全取决于您的工作表现。
+            </p>
+            <span>
+              Senior Designer | 资深策略顾问&amp;设计师
+            </span>
+            <p>
+              作为一个品牌或设计顾问，您的工作从一开始就是增加您的项目价值。通常您将负责一个项目模块；与客户进行会谈；准备与参加专题讨论会；分析数据；向您的项目负责人演示工作报告；准备工作报告。您将面对很广的项目范围，从中您将获得丰富的行业与专业经验。您将参加一些培训，不断地得到对您的工作表现的反馈信息，得到个人导师的指导。很快您将意识到，给予您的任务与责任完全有赖于您的工作表现。
+            </p>
+            <span>
+              Designer Assistant | 品牌助理&amp;设计助理
+            </span>
+            <p>
+              作为一个初级品牌或设计顾问，在工作开始的第一天您就是一个真正的品牌顾问或设计师。您将是一个成熟的项目成员，通常的任务将是从事一个到多个项目问题；与客户进行会谈；准备与参加项目创意会；进行设计调研与数据分析；向您的项目负责人做工作报告。您将面对很广的项目范围，从中您将获得非常丰富的行业与专业经验。您将参加各种培训，不断接受对您工作的反馈和来自导师的指导。很快您将意识到，分配给您的任务与责任完全取决于您的工作表现。
+            </p>
+          </div>
+          <a style="margin-top: -12px" name="lianxi2">
+            &nbsp;
+          </a>
+        </div>
+        <div class="main_15">
+          <span style="margin-top: 20px">
+            Growth &amp; Value｜成长&amp;价值
+          </span>
+          <span style="margin-top: 20px; float: right">
+           {:C('WebName')}的进步与成长，我们彼此见证
+          </span>
+        </div>
+        <div class="main_16">
+          <span>
+            <img alt="" src="{:C('DOMAIN')}__IMG__/index_42.jpg">
+          </span>
+          <span style="display: inline; margin-left: 12px">
+            <img alt="" src="{:C('DOMAIN')}__IMG__/index_43.jpg">
+          </span>
+          <span style="float: right">
+            <img alt="" src="{:C('DOMAIN')}__IMG__/index_44.jpg">
+          </span>
+        </div>
+        <div class="main_14_3">
+          <!--编码-->
+          <span>
+            Induction | 入职培训
+          </span>
+          <p>
+            在入职培训期间，您会对公司的架构取得初步了解。我们还会想您介绍{:C('WebName')}公司的内部系统，训练您适应我们的常见项目运作方式和工作方法。这样一个由各种会议和讲座组成的强化培训项目将帮助您以专业顾问的身份快速投入工作。娱乐和休闲也是培训的内容之一。您将会有机会认识来自各地的同事，与他们建立关系，这对今后的项目工作有极大的价值。
+          </p>
+          <span>
+            Mentoring System | 导师制度与在职学习
+          </span>
+          <p>
+            如果您加入我们的行列，我们会为您安排导师，他会监督您的个人与专业发展。他会定期与您面谈，决定您参加那些培训，与您谈论今后的项目，观察您的工作情况。您的导师也会与您一起制定年度目标，这也是{:C('WebNameSpell')}{:C('WebName')}公司设计目标体系的一部分。每日的工作将不断向您提出新的挑战，使您在个人与职业方面发挥出最大的能量和潜力，从而得到积极的发展。您将在专业生涯的各个阶段得到指导、信息反馈与启示。不仅从您的导师与小组成员那里，而且从客户那里。
+          </p>
+          <span>
+            Performance Evaluation | 业绩评估
+          </span>
+          <p>
+            您的项目负责人会在每个项目结束后对您的工作进行评估。同样，您也可以对您的项目负责人做一个评估。您会发现您的项目小组成员会在整个项目过程中，在信任与尊重的气氛下，对彼此的工作不断地给予意见反馈。您的导师每年两次向评估委员会报告您的工作情况，他们将对您的工作进行评估，以提职或提薪的方式来奖励您的进步。
+          </p>
+          <a style="margin-top: -12px" name="lianxi3">
+            &nbsp;
+          </a>
+        </div>
+        <div class="main_14_3" style="padding-bottom: 40px; margin-top: 5px">
+          <span>
+            Salary &amp; Benefits｜薪酬&amp;福利
+          </span>
+          <!--编码-->
+          <p>
+            {:C('WebNameSpell')}{:C('WebName')} | 美{:C('WebName')}聚的品牌精神注定了{:C('WebNameSpell')}{:C('WebName')}在企业经营中对人的尊重与珍惜，{:C('WebNameSpell')}{:C('WebName')}坚信作为智力组织而存在的设计机构中“人”这一要素是最为重要的。愿在{:C('WebNameSpell')}{:C('WebName')}进步与成长的旅程中，我们彼此见证。
+            <br>
+            <br>
+            在{:C('WebNameSpell')}{:C('WebName')}工作，伙伴们将享有以下福利：
+            <br>
+            &nbsp;
+          </p>
+          <div style="margin-top: 5px; width: 100%; float: left;">
+            <img src="{:C('DOMAIN')}__IMG__/xinchoufuli.jpg">
+          </div>
+          <a style="margin-top: -18px" name="lianxi4">
+            &nbsp;
+          </a>
+        </div>
+        <div class="main_15">
+          <span style="margin-top: 20px">
+            FAQs｜应聘帮助
+          </span>
+        </div>
+        <div class="main_14_3" style="border-bottom: 0px; border-left: 0px; border-top: 0px; border-right: 0px">
+          <!--编码-->
+          <span>
+            1、我应该什么时候递交申请比较合适？
+          </span>
+          <p>
+            应届毕业生可以在毕业前1-3个月内投递简历，有经验的品牌顾问或设计师需要为面试预留足够的时间。而应聘假期实习职位的，需要提前1个月左右申请。
+          </p>
+          <span>
+            2、申请{:C('WebName')}的职位需要满足什么条件？
+          </span>
+          <p>
+            要成为合格的品牌顾问和品牌设计师，您应该具有出色的分析能力、抽象理解力以及创新思维。如果您有过相关工作、实习或海外经历，您被邀请参加面试的几率将相应增加。能在富有挑战性的工作环境中应付自如的人将是我们的理想人选。当然，我们的标准也是很灵活的。
+          </p>
+          <span>
+            3、递交简历需注意细节：
+          </span>
+          <p>
+            为了保证您递交的申请简历不会因无法查收而错失合作的机会，请务必将您所递交的申请简历投递到专用邮箱：{:C('email')}
+          </p>
+          <span>
+            4、如您还有其它招聘方面的疑问，欢迎您来信咨询，我们将很乐意为您提供相关信息。
+          </span>
+        </div>
+      </div>
+
+    </div>
+</block>

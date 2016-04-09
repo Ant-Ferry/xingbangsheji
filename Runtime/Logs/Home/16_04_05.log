@@ -1,0 +1,20 @@
+[ 2016-04-05T20:47:58+08:00 ] ::1 /xingbang/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.065861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.141453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.141721s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.681403s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.681627s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.615008s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.615235s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.024302s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.024526s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.073960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.074322s ]
+

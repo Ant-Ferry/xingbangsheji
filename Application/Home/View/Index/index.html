@@ -1,0 +1,504 @@
+<extend name="Base/common"/>
+<!-- header start -->
+<block name="header">
+	  <script language="javascript">
+      var plarray = new Array();
+      plarray[0] = new Array("{:C('DOMAIN')}__IMG__/banner03.jpg", '');
+      plarray[1] = new Array("{:C('DOMAIN')}__IMG__/banner02.jpg", '');
+      plarray[2] = new Array("{:C('DOMAIN')}__IMG__/banner04.jpg", '');
+    </script>
+    <div id="bbb" class="adx" style="opacity: 1;">
+      <!--style="background-color:#040922"-->
+      <div class="ad_neix">
+        <div id="srcid" onmouseover="document.getElementById('arrowleft').style.display='';document.getElementById('arrowright').style.display='';"
+        onmouseout="document.getElementById('arrowleft').style.display='none';document.getElementById('arrowright').style.display='none';"
+        style="position: relative; width: 100%; min-width: 1043px; height: 538px; background: url(&quot;{:C('DOMAIN')}__IMG__/banner02.jpg&quot;) 50% 0% no-repeat;">
+          <img src="{:C('DOMAIN')}__IMG__/zuojiantou.png" width="50" height="126" id="arrowleft"
+          onclick="leftOne0e76228ea4384003b1e970bf2bd40536();" style="position: absolute; text-align: center; top: 206px; cursor: pointer; left: 45px; display: none;">
+          <img src="{:C('DOMAIN')}__IMG__/youjiantou.png" width="50" height="126" id="arrowright"
+          onclick="rightOne0e76228ea4384003b1e970bf2bd40536();" style="position: absolute; text-align: center; top: 206px; cursor: pointer; right: 45px; display: none;">
+        </div>
+      </div>
+    </div>
+    <script language="javascript">
+      var lock = false;
+      var daqian = 0;
+      var nextx = 0;
+      var srcidx = document.getElementById('srcid');
+
+      var setAlphaOpacity = function(el, i) {
+        i = i / 100.0;
+        if (window.getComputedStyle) { // for non-IE
+          el.style.opacity = i;
+        } else if (document.documentElement.currentStyle) { // for IE
+          if (!el.currentStyle.hasLayout) {
+            el.style.zoom = 1;
+          }
+          if (!el.currentStyle.hasLayout) { //在IE8中zoom不生效，所以再次设置inline-block
+            el.style.display = 'inline-block';
+          }
+          try {
+            //测试是否已有filter
+            //http://msdn.microsoft.com/en-us/library/ms532847%28VS.85%29.aspx
+            if (el.filters) {
+              if (el.filters('alpha')) {
+                el.filters('alpha').opacity = i * 100;
+              } else {
+                el.style.filter += 'alpha(opacity=' + i * 100 + ')';
+              }
+            }
+          } catch(e) {
+            el.style.filter = 'alpha(opacity=' + i * 100 + ')';
+          }
+        }
+      }
+
+      function leftOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian - 1 + plarray.length) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+      }
+
+      function rightOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian + 1) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+
+      }
+
+      function callbackx() {
+        srcidx.style.backgroundImage = "url(" + plarray[nextx][0] + ")"; //document.getElementById('bbb').style.backgroundColor=plarray[nextx][1];
+        setAlphaOpacity(document.getElementById('bbb'), 100);
+        daqian = nextx;
+        lock = false;
+      }
+
+      setInterval(rightOne0e76228ea4384003b1e970bf2bd40536, 12000);
+    </script>
+</block>
+<!-- header  -->
+
+<block name="content">
+	  <div class="main_all">
+      <div class="main">
+        <div class="main_1">
+          <span>
+            CREATE BRAND TRILOGY | 品牌创建三部曲
+          </span>
+        </div>
+        <div class="main_2">
+          <div class="main_2_boxa">
+            <div class="main_2_box_1a" onmouseover="document.getElementById('xing1').style.display=''"
+            onmouseout="document.getElementById('xing1').style.display='none'"
+            style="cursor: pointer">
+              <a href="">
+                <img alt="" width="326" height="407" src="{:C('DOMAIN')}__IMG__/p1.png">
+              </a>
+              <!--编码-->
+              <div id="xing1" class="main_9_1" style="display:none;">
+                <div class="main_9_1_nei">
+                  <p>
+                    <font style="font-size: 18px">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                      </a>
+                    </font>
+                    <br>
+                    <font style="font-size: 24px">
+                      <a style="margin-top: 0px; margin-left: 0px; font-size: 24px" href="">
+                        SUPERSTAR | 星品牌
+                      </a>
+                    </font>
+                    <br>
+                    <font size="+0">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                        <font size="+0">
+                          兴邦能够帮助您发现新的商业机会，准确定义品牌核心价值，并建立适合、专属的品牌识别系统。品牌识别系统所有工作的建立都源于对其个性价值的塑造，而成功品牌个性的评判标准也只源于目标消费者的情感认同
+                          <br>
+                        </font>
+                        <font size="+0">
+                          ＋品牌策略定义
+                          <br>
+                          ＋命名与SLOGAN
+                          <br>
+                          ＋标志与VI设计
+                          <br>
+                          ＋包装设计与产品研发
+                          <br>
+                          ＋画册与视觉推广
+                        </font>
+                      </a>
+                    </font>
+                    <img alt="" src="{:C('DOMAIN')}__IMG__/index_36.jpg">
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                STRATEGY&amp;BRAND DESIGN
+                <br>
+                策略定义&amp;品牌设计
+              </a>
+            </div>
+
+          </div>
+          <div class="main_2_boxa">
+            <div class="main_2_box_1a" onmouseover="document.getElementById('xing2').style.display=''"
+            onmouseout="document.getElementById('xing2').style.display='none'"
+            style="cursor: pointer">
+              <a href="">
+                <img alt="" width="326" height="407" src="{:C('DOMAIN')}__IMG__/p2.png">
+              </a>
+              <!--编码-->
+              <div id="xing2" class="main_9_1" style="display:none;">
+                <div class="main_9_1_nei">
+                  <p>
+                    <font style="font-size: 18px">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                      </a>
+                    </font>
+                    <br>
+                    <font style="font-size: 24px">
+                      <a style="margin-top: 0px; margin-left: 0px; font-size: 24px" href="">
+                        E SPACE | 易空间
+                      </a>
+                    </font>
+                    <br>
+                    <font size="+0">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                        <font size="+0">
+                          每一个商业空间都是品牌体验的载体，无不向消费者传达着品牌个性价值的倡导。兴邦从实用功能价值出发，在体现实用功能价值最大化的前提下；并将品牌核心元素导入商业环境系统，使得消费者更直接与深入的体验整个品牌
+                          <br>
+                        </font>
+                        <font size="+0">
+                          ＋商业空间设计
+                          <br>
+                          ＋连锁环境SI系统设计
+                          <br>
+                          ＋品牌展厅设计
+                          <br>
+                          ＋环境导示设计
+                          <br>
+                          ＋品牌氛围营造
+                        </font>
+                      </a>
+                    </font>
+                    <img alt="" src="{:C('DOMAIN')}__IMG__/index_36.jpg">
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                RETAIL STORE&amp;SI DESIGN
+                <br>
+                零售店面&amp;空间设计
+              </a>
+            </div>
+
+          </div>
+          <div class="main_2_boxa">
+            <div class="main_2_box_1a" onmouseover="document.getElementById('xing3').style.display=''"
+            onmouseout="document.getElementById('xing3').style.display='none'"
+            style="cursor: pointer">
+              <a href="">
+                <img alt="" width="326" height="407" src="{:C('DOMAIN')}__IMG__/p3.png">
+              </a>
+              <!--编码-->
+              <div id="xing3" class="main_9_1" style="display:none;">
+                <div class="main_9_1_nei">
+                  <p>
+                    <font style="font-size: 18px">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                      </a>
+                    </font>
+                    <br>
+                    <font style="font-size: 24px">
+                      <a style="margin-top: 0px; margin-left: 0px; font-size: 24px" href="">
+                        O2O | 速营销
+                      </a>
+                    </font>
+                    <br>
+                    <font size="+0">
+                      <a style="margin-top: 0px; margin-left: 0px" href="">
+                        <font size="+0">
+                          我们不仅致力于品牌可持续价值的生长，而且关注您品牌阶段性价值的实现。在互联网思维模式下，兴邦使用网络与数字化服务平台，实现从网站设计到微营销，从数字品牌托管到交互体验设计的全程服务
+                          <br>
+                        </font>
+                        <font size="+0">
+                          ＋PC与Mob网站设计
+                          <br>
+                          ＋UI与交互界面设计
+                          <br>
+                          ＋数字品牌年度托管
+                          <br>
+                          ＋互联网营销
+                        </font>
+                      </a>
+                    </font>
+                    <img alt="" src="{:C('DOMAIN')}__IMG__/index_36.jpg">
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                INTERACTIVE&amp;INTERNET+
+                <br>
+                交互体验&amp;互联网+
+              </a>
+            </div>
+
+          </div>
+        </div>
+        <div class="main_1" style="margin-top: 55px; border-top: #b2adaa 1px solid; padding-top: 27px">
+          <span>
+            PROFESSIONAL CENTER｜专业中心
+          </span>
+          <span style="float: right">
+            设计是品牌资产之重要基石
+          </span>
+        </div>
+        <div class="main_2">
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy1.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Brand Strategy &amp; Naming
+                <br>
+                策略定义 &amp; 品牌命名
+              </a>
+            </div>
+
+          </div>
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy2.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Brand Logo &amp; VI
+                <br>
+                品牌标志&amp;VI设计
+              </a>
+            </div>
+          </div>
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy3.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Packaging &amp; Product Design
+                <br>
+                包装设计&amp;产品开发
+              </a>
+            </div>
+
+          </div>
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy4.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Marketing &amp; Visual Design
+                <br>
+                画册设计&amp;营销传播
+              </a>
+            </div>
+          </div>
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy5.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Brochure &amp; Retail Stores
+                <br>
+                SI空间&amp;零售店面
+              </a>
+            </div>
+          </div>
+          <div class="main_2_box">
+            <div class="main_2_box_1">
+              <a href="">
+                <img alt="" src="{:C('DOMAIN')}__IMG__/zy6.jpg">
+              </a>
+            </div>
+            <div class="main_2_box_2">
+              <a href="">
+                Interactive &amp; Multimedia
+                <br>
+                高端网站&amp;互动体验
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="main_3">
+          <span>
+            Industry Center｜行业中心
+          </span>
+          <span style="float: right">
+            经验的意义在于颠覆并创新
+          </span>
+        </div>
+        <div class="main_4">
+          <a target="_blank" href="">
+            <img alt="" src="{:C('DOMAIN')}__IMG__/index_15.jpg">
+          </a>
+        </div>
+        <div class="main_5">
+          <!--编码-->
+          <div class="main_5_1">
+            <img alt="" onclick="rightOne4c981d0c26d04388ad61051531df4f99();" style="cursor: pointer"
+            src="{:C('DOMAIN')}__IMG__/index_16.jpg">
+          </div>
+          <div class="main_5_2">
+            <!--编码-->
+            <div style="width:900px; height:65px; overflow: hidden; position:relative;">
+              <table border="0" cellspacing="0" cellpadding="0" id="divMarqueeLeft4c981d0c26d04388ad61051531df4f99"
+              style="position:relative;">
+                <tbody>
+                  <tr>
+                    <td id="tdMaruqeeLeft4c981d0c26d04388ad61051531df4f99">
+                      <ul style="width: 2208px">
+                        <li>
+                          <a href="">
+                            Club &amp; Catering
+                            <br>
+                            高端会所&amp;餐饮
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Business &amp; Company
+                            <br>
+                            企业&amp;集团公司
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            IT &amp; Technology
+                            <br>
+                            互联网&amp;科技
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Luxury &amp; Wine
+                            <br>
+                            奢侈品&amp;红酒
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Health &amp; Medicine
+                            <br>
+                            健康&amp;医药
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Culture &amp; Education
+                            <br>
+                            文化&amp;教育
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Retail &amp; clothing
+                            <br>
+                            零售&amp;服饰
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Pregnant &amp; Children
+                            <br>
+                            孕婴&amp;儿童
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Agriculture &amp; Products
+                            <br>
+                            农业&amp;产品
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Sport &amp; Tourism
+                            <br>
+                            运动&amp;旅游
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Make &amp; Industrial
+                            <br>
+                            制造&amp;工业
+                          </a>
+                        </li>
+                        <li>
+                          <a href="">
+                            Finance &amp; Investment
+                            <br>
+                            金融&amp;投资
+                          </a>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="main_5_3">
+            <img alt="" onclick="leftOne4c981d0c26d04388ad61051531df4f99();" style="cursor: pointer"
+            src="{:C('DOMAIN')}__IMG__/index_17.jpg">
+          </div>
+        </div>
+
+      </div>
+    </div>
+</block>

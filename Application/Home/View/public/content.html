@@ -1,0 +1,263 @@
+<!-- content start -->
+<div class="content-wrapper">
+        <!--编码-->
+    <block name="header"></block>
+    <block name="content"></block>
+    <!-- footer start -->
+        <!--编码-->
+    <div class="bottom_all">
+      <div class="bottom">
+        <div class="bottom_1">
+          <div class="bottom_1_1">
+            <span style="width: 100%">
+              Contact Us &amp; 联系我们
+            </span>
+            <span style="margin-top: 20px; font-size: 12px">
+              直线（天津）：{:C('phone')}
+            </span>
+          </div>
+          <div class="bottom_1_2">
+            <span style="line-height: 19px; margin-top: 20px; font-size: 12px">
+              E-mail &amp; {:C('name')}邮箱
+              <br>
+              {:C('email')}
+            </span>
+          </div>
+          <div class="bottom_1_3">
+            地址 &amp; {:C('address')}
+            <br>
+            邮编 &amp; {:C('zipCode')}
+          </div>
+          <div class="bottom_1_3">
+            Brand Consulting &amp; 品牌咨询 {:C('linkQQ')}
+          </div>
+        </div>
+        <div class="bottom_2" style="display:none;">
+          <div class="bottom_2_1">
+            <span>
+              Sitemap &amp; 网站地图
+            </span>
+          </div>
+          <div class="bottom_2_2">
+            <ul>
+              <li>
+                <a href="{:U('index/index')}">
+                  Home | 主页
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  About Us | 关于我们
+                </a>
+              </li>
+              <li style="float: right">
+                <a href="">
+                  Contact Us | 联系我们
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  Work Case  | 工作案例
+                </a>
+              </li>
+              <li style="float: right">
+                <a href="">
+                  Job
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  Service
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom_3">
+          <div class="bottom_2_1">
+            <span>
+              Poressional &amp; 专业中心
+            </span>
+          </div>
+          <div class="bottom_3_2">
+            <ul>
+              <li>
+                <a href="">
+                  品牌策略&amp;命名
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  品牌标志&amp;VI设计
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  包装&amp;产品设计
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  营销传播&amp;视觉设计
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  SI空间&amp;零售店面
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  互动体验&amp;多媒体
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bottom_4">
+          <div class="bottom_2_1">
+            <span>
+              Subscribe &amp; 留言
+            </span>
+          </div>
+          <div class="bottom_4_2">
+            <!--编码-->
+            <form name="formx_673944feacb64013a05ff5eafd8a9d35" id="formx_673944feacb64013a05ff5eafd8a9d35"
+            method="post" action=""
+            onsubmit="return check_673944feacb64013a05ff5eafd8a9d35();">
+              <input type="hidden" value="./index.html?" name="prepage" id="prepage">
+              <ul>
+                <li>
+                  <textarea id="attr0" name="attr0" rows="10" cols="55">
+                  </textarea>
+                </li>
+                <li>
+                  <span class="shu_1">
+                    <input id="attr1" size="25" onblur="if(value==&#39;&#39;){value=&#39;姓名&#39;}"
+                    onfocus="if(value==&#39;姓名&#39;){value=&#39;&#39;}" style="color: #ccc"
+                    name="attr1" value="姓名" type="text">
+                  </span>
+                </li>
+                <li>
+                  <span class="shu_1">
+                    <input id="attr2" size="25" onblur="if(value==&#39;&#39;){value=&#39;邮箱&#39;}"
+                    onfocus="if(value==&#39;邮箱&#39;){value=&#39;&#39;}" style="color: #ccc"
+                    name="attr2" value="邮箱" type="text">
+                  </span>
+                </li>
+                <li>
+                  <span class="shu_1">
+                    <input id="attr3" size="25" onblur="if(value==&#39;&#39;){value=&#39;手机号码&#39;}"
+                    onfocus="if(value==&#39;手机号码&#39;){value=&#39;&#39;}" style="color: #ccc"
+                    name="attr3" value="手机号码" type="text">
+                  </span>
+                </li>
+                <li>
+                  <span class="shu_2">
+                    <input src="{:C('DOMAIN')}__IMG__/index_21.jpg" type="image">
+                  </span>
+                </li>
+              </ul>
+            </form>
+            </script>
+            <script language="javascript">
+              function check_673944feacb64013a05ff5eafd8a9d35() {
+                var formx = document.getElementById("formx_673944feacb64013a05ff5eafd8a9d35");
+
+                /////#####注册表单附加js(直接代码组件名称)
+
+                if (GetWater()) {
+                  alert('您发布得太快,请稍后再试...');
+                  return false;
+                }
+                SetWater();
+
+                return true;
+              }
+
+              function trim(x) {
+                var tou, wei
+                for (i_jq = 0; i_jq < x.length; i_jq++) {
+                  if (x.charAt(i_jq) != ' ') {
+                    tou = i_jq
+                    break
+                  }
+                }
+                for (i_jq = x.length - 1; i_jq >= 0; i_jq--) {
+                  if (x.charAt(i_jq) != ' ') {
+                    wei = i_jq
+                    break
+                  }
+                }
+                return x.substring(tou, wei + 1)
+              }
+
+              function voidnum(argvalue, argvalue1) {
+                if (argvalue == '') return true;
+                var flag1 = false;
+                //var compstr="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
+                var compstr = argvalue1;
+                var length2 = argvalue.length;
+                for (iIndex = 0; iIndex < length2; iIndex++) {
+                  var temp1 = compstr.indexOf(argvalue.charAt(iIndex));
+                  if (temp1 == -1) {
+                    flag1 = false;
+                    break;
+                  } else {
+                    flag1 = true;
+                  }
+                }
+                return flag1
+              }
+            </script>
+          </div>
+        </div>
+        <div class="bottom_5">
+          <p style="text-align: center;" >
+            {:C('button')}
+          </p>
+          <span style="float:right; margin-top:3px;">
+            <!--编码-->
+            </script>
+          </span>
+        </div>
+      </div>
+    </div>
+
+      <script>
+        $(function(){
+          var win = $(window);
+          var gototopHtml = '<div id="topcontrol"><a href="javascript:void(0);" class="top_stick"><img border="0" alt="" src="{:C('DOMAIN')}__IMG__/index_22.jpg"></a></div>';
+          $("body").append(gototopHtml);
+          $("#topcontrol").css({
+            "display": "none",
+            "margin-left" : "auto",
+            "margin-right" : "auto",
+            "width" : 1000
+          });
+          $("#topcontrol").find(".top_stick").css({
+            "position" : "fixed",
+            "bottom" : 50,
+            "right": 50,
+            "z-index":999999
+          });
+
+          win.scroll(function(){
+            var scrTop = win.scrollTop();
+            if( scrTop > 100 ) {
+              $("#topcontrol").fadeIn();
+            } else {
+              $("#topcontrol").fadeOut();
+            }
+          });
+
+          $("#topcontrol").click(function(){
+            $('body,html').animate({scrollTop: 0}, 500);
+          })
+        })
+      </script>
+    <!-- footer end -->
+    
+    <block name="script"></block>
+</div>
+<!-- content end -->

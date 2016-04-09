@@ -1,0 +1,131 @@
+<extend name="Base/common"/>
+<!-- header start -->
+<block name="header">
+     <script language="javascript">
+      var plarray = new Array();
+      plarray[0] = new Array("{:C('DOMAIN')}__IMG__/banner04.jpg", '');
+      plarray[1] = new Array("{:C('DOMAIN')}__IMG__/banner02.jpg", '');
+      plarray[2] = new Array("{:C('DOMAIN')}__IMG__/banner03.jpg", '');
+
+    </script>	
+    <div id="bbb" class="adx" style="opacity: 1;">
+      <!--style="background-color:#040922"-->
+      <div class="ad_neix">
+        <div id="srcid" onmouseover="document.getElementById(&#39;arrowleft&#39;).style.display=&#39;&#39;;document.getElementById(&#39;arrowright&#39;).style.display=&#39;&#39;;"
+        onmouseout="document.getElementById(&#39;arrowleft&#39;).style.display=&#39;none&#39;;document.getElementById(&#39;arrowright&#39;).style.display=&#39;none&#39;;"
+        style="position: relative; width: 100%; min-width: 1043px; height: 538px; background: url(&quot;{:C('DOMAIN')}__IMG__/banner02.jpg&quot;) 50% 0% no-repeat;">
+          <img src="{:C('DOMAIN')}__IMG__/zuojiantou.png" width="50" height="126" id="arrowleft"
+          onclick="leftOne0e76228ea4384003b1e970bf2bd40536();" style="position: absolute; text-align: center; top: 206px; cursor: pointer; left: 45px; display: none;">
+          <img src="{:C('DOMAIN')}__IMG__/youjiantou.png" width="50" height="126" id="arrowright"
+          onclick="rightOne0e76228ea4384003b1e970bf2bd40536();" style="position: absolute; text-align: center; top: 206px; cursor: pointer; right: 45px; display: none;">
+        </div>
+      </div>
+    </div>
+    <script language="javascript">
+      var lock = false;
+      var daqian = 0;
+      var nextx = 0;
+      var srcidx = document.getElementById('srcid');
+
+      var setAlphaOpacity = function(el, i) {
+        i = i / 100.0;
+        if (window.getComputedStyle) { // for non-IE
+          el.style.opacity = i;
+        } else if (document.documentElement.currentStyle) { // for IE
+          if (!el.currentStyle.hasLayout) {
+            el.style.zoom = 1;
+          }
+          if (!el.currentStyle.hasLayout) { //在IE8中zoom不生效，所以再次设置inline-block
+            el.style.display = 'inline-block';
+          }
+          try {
+            //测试是否已有filter
+            //http://msdn.microsoft.com/en-us/library/ms532847%28VS.85%29.aspx
+            if (el.filters) {
+              if (el.filters('alpha')) {
+                el.filters('alpha').opacity = i * 100;
+              } else {
+                el.style.filter += 'alpha(opacity=' + i * 100 + ')';
+              }
+            }
+          } catch(e) {
+            el.style.filter = 'alpha(opacity=' + i * 100 + ')';
+          }
+        }
+      }
+
+      function leftOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian - 1 + plarray.length) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+      }
+
+      function rightOne0e76228ea4384003b1e970bf2bd40536() {
+        if (lock) {
+          return;
+        } else {
+          lock = true;
+        }
+        nextx = (daqian + 1) % plarray.length;
+
+        $("#bbb").animate({
+          opacity: "0.2"
+        },
+        {
+          complete: callbackx,
+          queue: false,
+          duration: 400
+        });
+
+      }
+
+      function callbackx() {
+        srcidx.style.backgroundImage = "url(" + plarray[nextx][0] + ")"; //document.getElementById('bbb').style.backgroundColor=plarray[nextx][1];
+        setAlphaOpacity(document.getElementById('bbb'), 100);
+        daqian = nextx;
+        lock = false;
+      }
+
+      setInterval(rightOne0e76228ea4384003b1e970bf2bd40536, 12000);
+    </script>
+</block>
+<!-- header  -->
+
+<block name="content">
+      <div id="main_all" class="main_all" style="margin-top: 0px; background: #3d4247; padding-top: 52px;margin-bottom: -60px;">
+      <div class="main" style="overflow: visible">
+        <a id="faxian" name="faxian">
+        </a>
+        <div class="main_1" style="padding-bottom: 17px; margin-bottom: 50px">
+          <span style="color: #fff">
+            {:C('WebNameSpell')} DISCOVER｜{:C('WebName')}发现
+          </span>
+          <span style="float: right; color: #fff">
+            设计发现生活之美妙
+          </span>
+        </div>
+        <div style="text-align: center">
+          <img alt="" src="{:C('DOMAIN')}__IMG__/w1.jpg">
+          <br>
+          <div style="text-align: center; line-height: 46px; margin: 20px auto 0px; width: 297px; background: url(__IMG__/w2.png) no-repeat; height: 46px; color: #fff; font-size: 14px">
+            请使用微信扫描二维码以关注
+          </div>
+          <div style="text-align: center; margin: 20px 0px 40px 0px; color: #fff; font-size: 12px">
+            微信号XINBON-TJ
+          </div>
+        </div>
+      </div>
+    </div>
+</block>
